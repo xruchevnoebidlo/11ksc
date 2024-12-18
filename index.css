@@ -1,0 +1,265 @@
+/* Глобальные стили для всего сайта */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0162a3, #0072ff, #7a59b6, #e73cb4); /* Яркие цвета */
+  background-size: 400% 400%;
+  animation: gradientBG 24s ease infinite; /* Быстрая анимация */
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-attachment: fixed;
+}
+
+/* Анимация плавного фона */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 0% 100%; }
+  75% { background-position: 100% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Заголовки */
+h1, h2 {
+  color: #0f6de7;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Анимация для заголовков */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Основной контейнер */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.85); /* Полупрозрачный фон */
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Увеличенный отступ между кнопками */
+  color: #333;
+  animation: containerSlide 1s ease-out, shadowPulse 4s ease-in-out infinite; /* Анимации для контейнера */
+}
+
+/* Анимация для контейнера */
+@keyframes containerSlide {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Анимация для пульсации тени */
+@keyframes shadowPulse {
+  0% { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); }
+  50% { box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+  100% { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); }
+}
+
+/* Кнопки с прозрачным фоном и квадратной окантовкой */
+button, a {
+  background-color: transparent; /* Прозрачный фон */
+  border: 2px solid transparent; /* Нет окантовки по умолчанию */
+  color: #3498db; /* Синий цвет текста */
+  padding: 14px 28px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 5px; /* Квадратные углы */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Плавный переход */
+  outline: none; /* Убираем стандартный контур при фокусе */
+  opacity: 1; /* Текущий текст яркий */
+  margin-right: 20px; /* Добавлен отступ между кнопками */
+}
+
+/* Эффект при наведении */
+button:hover, a:hover {
+  opacity: 1; /* Меняем прозрачность при наведении */
+  background-color: rgba(52, 152, 219, 0.1); /* Полупрозрачный синий фон */
+  border: 2px solid #3498db; /* Синий контур при наведении */
+  color: #3498db; /* Текст остается синим */
+  transform: translateY(-3px); /* Легкое поднятие */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Тень при наведении */
+}
+
+/* Кнопка в активном состоянии */
+button:active, a:active {
+  transform: translateY(2px); /* Легкое опускание при нажатии */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Кнопка с эффектом внутреннего градиента */
+button.gradient, a.gradient {
+  background-color: transparent;
+  border: 2px solid transparent;
+  background-image: linear-gradient(45deg, #3498db, #1e69d2); /* Градиент */
+  color: white;
+  box-shadow: none;
+}
+
+button.gradient:hover, a.gradient:hover {
+  background-image: linear-gradient(45deg, #1e69d2, #3498db);
+  transform: scale(1.05); /* Увеличение */
+}
+
+/* Кнопка с эффектом тени */
+button.shadow, a.shadow {
+  border: 2px solid #3498db;
+  color: #3498db;
+  background-color: transparent;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button.shadow:hover, a.shadow:hover {
+  transform: translateY(-5px); /* Легкое поднятие */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Более сильная тень */
+}
+
+/* Дополнительные кнопки с эффектами */
+button.outline, a.outline {
+  background-color: transparent;
+  border: 2px solid #e74c3c;
+  color: #e74c3c;
+  padding: 12px 24px;
+  border-radius: 3px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+button.outline:hover, a.outline:hover {
+  background-color: #e74c3c;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Логотип */
+.welcome-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.welcome-image {
+  height: 80px;
+  width: auto;
+  border-radius: 12px;
+  background-color: #fff;
+  padding: 5px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.welcome-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Секции контента */
+.content-sections {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* Каждая секция */
+.tasks-section, .news-section, .schedule-section {
+  flex: 1;
+  padding: 25px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 280px;
+}
+
+.tasks-section:hover, .news-section:hover, .schedule-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Стили для списка */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #fff;
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+li:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Таблица с оценками */
+.grades-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.grades-table th,
+.grades-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.grades-table th {
+  background-color: #f4f4f4;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.grades-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Поля ввода и кнопки */
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+}
